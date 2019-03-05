@@ -1,14 +1,9 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Example user template template
-### Example user template
-
 # IntelliJ project files
 .idea
 *.iml
 out
-gen### VirtualEnv template
+
 # Virtualenv
-# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
 .Python
 [Bb]in
 [Ii]nclude
@@ -20,5 +15,6 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
+# Extra
 data
 private.py
