@@ -1,0 +1,375 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 75,
+    "results": [
+      {
+        "id": "artanddesign",
+        "webTitle": "Art and design",
+        "webUrl": "https://www.theguardian.com/artanddesign",
+        "apiUrl": "https://content.guardianapis.com/artanddesign",
+        "editions": [
+          {
+            "id": "artanddesign",
+            "webTitle": "Art and design",
+            "webUrl": "https://www.theguardian.com/artanddesign",
+            "apiUrl": "https://content.guardianapis.com/artanddesign",
+            "code": "default"
+          }
+        ]
+      },
+      {
+        "id": "business",
+        "webTitle": "Business",
+        "webUrl": "https://www.theguardian.com/business",
+        "apiUrl": "https://content.guardianapis.com/business",
+        "editions": [
+          {
+            "id": "business",
+            "webTitle": "Business",
+            "webUrl": "https://www.theguardian.com/business",
+            "apiUrl": "https://content.guardianapis.com/business",
+            "code": "default"
+          },
+          {
+            "id": "uk/business",
+            "webTitle": "Business",
+            "webUrl": "https://www.theguardian.com/uk/business",
+            "apiUrl": "https://content.guardianapis.com/uk/business",
+            "code": "uk"
+          },
+          {
+            "id": "us/business",
+            "webTitle": "Business",
+            "webUrl": "https://www.theguardian.com/us/business",
+            "apiUrl": "https://content.guardianapis.com/us/business",
+            "code": "us"
+          },
+          {
+            "id": "au/business",
+            "webTitle": "Business",
+            "webUrl": "https://www.theguardian.com/au/business",
+            "apiUrl": "https://content.guardianapis.com/au/business",
+            "code": "au"
+          }
+        ]
+      },
+      {
+        "id": "education",
+        "webTitle": "Education",
+        "webUrl": "https://www.theguardian.com/education",
+        "apiUrl": "https://content.guardianapis.com/education",
+        "editions": [
+          {
+            "id": "education",
+            "webTitle": "Education",
+            "webUrl": "https://www.theguardian.com/education",
+            "apiUrl": "https://content.guardianapis.com/education",
+            "code": "default"
+          }
+        ]
+      },
+      {
+        "id": "environment",
+        "webTitle": "Environment",
+        "webUrl": "https://www.theguardian.com/environment",
+        "apiUrl": "https://content.guardianapis.com/environment",
+        "editions": [
+          {
+            "id": "environment",
+            "webTitle": "Environment",
+            "webUrl": "https://www.theguardian.com/environment",
+            "apiUrl": "https://content.guardianapis.com/environment",
+            "code": "default"
+          },
+          {
+            "id": "au/environment",
+            "webTitle": "Environment",
+            "webUrl": "https://www.theguardian.com/au/environment",
+            "apiUrl": "https://content.guardianapis.com/au/environment",
+            "code": "au"
+          },
+          {
+            "id": "uk/environment",
+            "webTitle": "Environment",
+            "webUrl": "https://www.theguardian.com/uk/environment",
+            "apiUrl": "https://content.guardianapis.com/uk/environment",
+            "code": "uk"
+          },
+          {
+            "id": "us/environment",
+            "webTitle": "Environment",
+            "webUrl": "https://www.theguardian.com/us/environment",
+            "apiUrl": "https://content.guardianapis.com/us/environment",
+            "code": "us"
+          }
+        ]
+      },
+      {
+        "id": "fashion",
+        "webTitle": "Fashion",
+        "webUrl": "https://www.theguardian.com/fashion",
+        "apiUrl": "https://content.guardianapis.com/fashion",
+        "editions": [
+          {
+            "id": "fashion",
+            "webTitle": "Fashion",
+            "webUrl": "https://www.theguardian.com/fashion",
+            "apiUrl": "https://content.guardianapis.com/fashion",
+            "code": "default"
+          }
+        ]
+      },
+      {
+        "id": "film",
+        "webTitle": "Film",
+        "webUrl": "https://www.theguardian.com/film",
+        "apiUrl": "https://content.guardianapis.com/film",
+        "editions": [
+          {
+            "id": "film",
+            "webTitle": "Film",
+            "webUrl": "https://www.theguardian.com/film",
+            "apiUrl": "https://content.guardianapis.com/film",
+            "code": "default"
+          },
+          {
+            "id": "au/film",
+            "webTitle": "Film",
+            "webUrl": "https://www.theguardian.com/au/film",
+            "apiUrl": "https://content.guardianapis.com/au/film",
+            "code": "au"
+          },
+          {
+            "id": "uk/film",
+            "webTitle": "Film",
+            "webUrl": "https://www.theguardian.com/uk/film",
+            "apiUrl": "https://content.guardianapis.com/uk/film",
+            "code": "uk"
+          },
+          {
+            "id": "us/film",
+            "webTitle": "Film",
+            "webUrl": "https://www.theguardian.com/us/film",
+            "apiUrl": "https://content.guardianapis.com/us/film",
+            "code": "us"
+          }
+        ]
+      },
+      {
+        "id": "food",
+        "webTitle": "Food",
+        "webUrl": "https://www.theguardian.com/food",
+        "apiUrl": "https://content.guardianapis.com/food",
+        "editions": [
+          {
+            "id": "food",
+            "webTitle": "Food",
+            "webUrl": "https://www.theguardian.com/food",
+            "apiUrl": "https://content.guardianapis.com/food",
+            "code": "default"
+          }
+        ]
+      },
+      {
+        "id": "football",
+        "webTitle": "Football",
+        "webUrl": "https://www.theguardian.com/football",
+        "apiUrl": "https://content.guardianapis.com/football",
+        "editions": [
+          {
+            "id": "football",
+            "webTitle": "Football",
+            "webUrl": "https://www.theguardian.com/football",
+            "apiUrl": "https://content.guardianapis.com/football",
+            "code": "default"
+          }
+        ]
+      },
+      {
+        "id": "games",
+        "webTitle": "Games",
+        "webUrl": "https://www.theguardian.com/games",
+        "apiUrl": "https://content.guardianapis.com/games",
+        "editions": [
+          {
+            "id": "games",
+            "webTitle": "Games",
+            "webUrl": "https://www.theguardian.com/games",
+            "apiUrl": "https://content.guardianapis.com/games",
+            "code": "default"
+          }
+        ]
+      },
+      {
+        "id": "music",
+        "webTitle": "Music",
+        "webUrl": "https://www.theguardian.com/music",
+        "apiUrl": "https://content.guardianapis.com/music",
+        "editions": [
+          {
+            "id": "music",
+            "webTitle": "Music",
+            "webUrl": "https://www.theguardian.com/music",
+            "apiUrl": "https://content.guardianapis.com/music",
+            "code": "default"
+          }
+        ]
+      },
+      {
+        "id": "politics",
+        "webTitle": "Politics",
+        "webUrl": "https://www.theguardian.com/politics",
+        "apiUrl": "https://content.guardianapis.com/politics",
+        "editions": [
+          {
+            "id": "politics",
+            "webTitle": "Politics",
+            "webUrl": "https://www.theguardian.com/politics",
+            "apiUrl": "https://content.guardianapis.com/politics",
+            "code": "default"
+          }
+        ]
+      },
+      {
+        "id": "science",
+        "webTitle": "Science",
+        "webUrl": "https://www.theguardian.com/science",
+        "apiUrl": "https://content.guardianapis.com/science",
+        "editions": [
+          {
+            "id": "science",
+            "webTitle": "Science",
+            "webUrl": "https://www.theguardian.com/science",
+            "apiUrl": "https://content.guardianapis.com/science",
+            "code": "default"
+          }
+        ]
+      },
+      {
+        "id": "sport",
+        "webTitle": "Sport",
+        "webUrl": "https://www.theguardian.com/sport",
+        "apiUrl": "https://content.guardianapis.com/sport",
+        "editions": [
+          {
+            "id": "sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/sport",
+            "apiUrl": "https://content.guardianapis.com/sport",
+            "code": "default"
+          },
+          {
+            "id": "uk/sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/uk/sport",
+            "apiUrl": "https://content.guardianapis.com/uk/sport",
+            "code": "uk"
+          },
+          {
+            "id": "us/sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/us/sport",
+            "apiUrl": "https://content.guardianapis.com/us/sport",
+            "code": "us"
+          },
+          {
+            "id": "au/sport",
+            "webTitle": "Sport",
+            "webUrl": "https://www.theguardian.com/au/sport",
+            "apiUrl": "https://content.guardianapis.com/au/sport",
+            "code": "au"
+          }
+        ]
+      },
+      {
+        "id": "technology",
+        "webTitle": "Technology",
+        "webUrl": "https://www.theguardian.com/technology",
+        "apiUrl": "https://content.guardianapis.com/technology",
+        "editions": [
+          {
+            "id": "technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/technology",
+            "apiUrl": "https://content.guardianapis.com/technology",
+            "code": "default"
+          },
+          {
+            "id": "au/technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/au/technology",
+            "apiUrl": "https://content.guardianapis.com/au/technology",
+            "code": "au"
+          },
+          {
+            "id": "uk/technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/uk/technology",
+            "apiUrl": "https://content.guardianapis.com/uk/technology",
+            "code": "uk"
+          },
+          {
+            "id": "us/technology",
+            "webTitle": "Technology",
+            "webUrl": "https://www.theguardian.com/us/technology",
+            "apiUrl": "https://content.guardianapis.com/us/technology",
+            "code": "us"
+          }
+        ]
+      },
+      {
+        "id": "travel",
+        "webTitle": "Travel",
+        "webUrl": "https://www.theguardian.com/travel",
+        "apiUrl": "https://content.guardianapis.com/travel",
+        "editions": [
+          {
+            "id": "travel",
+            "webTitle": "Travel",
+            "webUrl": "https://www.theguardian.com/travel",
+            "apiUrl": "https://content.guardianapis.com/travel",
+            "code": "default"
+          },
+          {
+            "id": "au/travel",
+            "webTitle": "Travel",
+            "webUrl": "https://www.theguardian.com/au/travel",
+            "apiUrl": "https://content.guardianapis.com/au/travel",
+            "code": "au"
+          },
+          {
+            "id": "uk/travel",
+            "webTitle": "Travel",
+            "webUrl": "https://www.theguardian.com/uk/travel",
+            "apiUrl": "https://content.guardianapis.com/uk/travel",
+            "code": "uk"
+          },
+          {
+            "id": "us/travel",
+            "webTitle": "Travel",
+            "webUrl": "https://www.theguardian.com/us/travel",
+            "apiUrl": "https://content.guardianapis.com/us/travel",
+            "code": "us"
+          }
+        ]
+      },
+      {
+        "id": "weather",
+        "webTitle": "Weather",
+        "webUrl": "https://www.theguardian.com/weather",
+        "apiUrl": "https://content.guardianapis.com/weather",
+        "editions": [
+          {
+            "id": "weather",
+            "webTitle": "Weather",
+            "webUrl": "https://www.theguardian.com/weather",
+            "apiUrl": "https://content.guardianapis.com/weather",
+            "code": "default"
+          }
+        ]
+      }
+    ]
+  }
+}
