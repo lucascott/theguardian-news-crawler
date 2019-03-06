@@ -1,16 +1,19 @@
+"""
+IMPORTANT:
+
+To make DeGuardianBoi run it is necessary to obtain the API key from The Guardian and set it in the
+THEAPIGUARDIAN environment variable.
+"""
 import json
+import os
+from tqdm import tqdm
 
 from deguardianboi import DeGuardianBoi
 
-'''
-Create a file named private.py and inside declare a var api_key = <your_api_key>
-'''
-import private
-
-
 base_url = 'https://content.guardianapis.com/search?'
-api_key = private.api_key
-categories = ['football', 'technology', 'politics']
+api_key = os.getenv('THEAPIGUARDIAN')
+categories = ['film', 'technology', 'travel', 'food', 'business', 'fashion', 'education', 'artanddesign', 'football',
+              'games']
 incremental_label = 'page'
 key_label = 'api-key'
 query_label = 'q'
@@ -32,7 +35,7 @@ dgb = DeGuardianBoi()
 data = {}
 for c in categories:
     data[c] = {}
-    for i in range(1, 1 + get_n_pages(total_articles, len(categories))):
+    for i in tqdm(range(1, 1 + get_n_pages(total_articles, len(categories)))):
         url = base_url + concat_params({
             key_label: api_key,
             query_label: c,
@@ -47,7 +50,7 @@ for c in categories:
                 r['corpus'] = corpus
                 data[c][r['id']] = r
             else:
-                print(f'The corpus couldn\'t be loaded. The article {url} has been skipped.')
+                print(f'The corpus could not be loaded. The article {url} has been skipped.')
     comp_path = output_path + c + '.json'
     with open(comp_path, 'w') as fout:
         json.dump(data[c], fout)
