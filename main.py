@@ -13,8 +13,8 @@ from deguardianboi import DeGuardianBoi
 
 base_url = 'https://content.guardianapis.com/search?'
 api_key = os.getenv('THEAPIGUARDIAN')
-categories = ['film', 'technology', 'travel', 'food', 'business', 'fashion', 'education', 'artanddesign', 'football',
-              'games']
+categories = {'film', 'technology', 'travel', 'food', 'business', 'fashion', 'education', 'artanddesign', 'football',
+              'games'}
 incremental_label = 'page'
 key_label = 'api-key'
 query_label = 'q'
@@ -34,7 +34,7 @@ def get_n_pages(total_articles, articles_per_page=10):
 
 dgb = DeGuardianBoi()
 data = {}
-with tqdm(total=articles_per_cat * len(categories), desc=categories[0]) as pbar:
+with tqdm(total=articles_per_cat * len(categories), desc=categories[0], unit='articles') as pbar:
     for c in categories:
         data[c] = {}
         pbar.desc = c
