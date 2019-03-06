@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-class DeGuardianBoi():
+class DeGuardianBoi:
 
     def __init__(self):
         self.corpus = {}
@@ -32,7 +32,6 @@ class DeGuardianBoi():
             return article
         except:
             return False
-
 
 
 if __name__ == '__main__':
