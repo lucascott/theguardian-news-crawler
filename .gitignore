@@ -17,3 +17,4 @@ pip-selfcheck.json
 
 # Extra
 data
+__pycache__

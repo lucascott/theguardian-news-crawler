@@ -34,7 +34,7 @@ def get_n_pages(total_articles, articles_per_page=10):
 
 dgb = DeGuardianBoi()
 data = {}
-with tqdm(total=articles_per_cat * len(categories), desc=categories[0], unit='articles') as pbar:
+with tqdm(total=articles_per_cat * len(categories), desc=list(categories)[0], unit='articles') as pbar:
     for c in categories:
         data[c] = {}
         pbar.desc = c
