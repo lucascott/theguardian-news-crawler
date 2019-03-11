@@ -6,8 +6,7 @@ if __name__ == "__main__":
     base_url = 'https://content.guardianapis.com/search?'
     api_key = os.getenv('THEAPIGUARDIAN')
     categories = {'film', 'technology', 'travel', 'food', 'business', 'fashion', 'education', 'artanddesign',
-                  'football',
-                  'games'}
+                  'football', 'games'}
     incremental_label = 'page'
     key_label = 'api-key'
     query_label = 'q'
