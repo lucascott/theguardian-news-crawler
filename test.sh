@@ -1,2 +1,2 @@
 mkdir -p data
-python main.py
+python test.py
