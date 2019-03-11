@@ -12,7 +12,7 @@ if __name__ == "__main__":
     key_label = 'api-key'
     query_label = 'q'
 
-    articles_per_cat = 200
+    articles_per_cat = 5
 
     output_path = './data/articles_'
     pipeline(base_url, api_key, categories, incremental_label, key_label, query_label, articles_per_cat, output_path)
