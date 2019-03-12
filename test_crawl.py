@@ -13,6 +13,8 @@ if __name__ == "__main__":
     query_label = 'q'
 
     articles_per_cat = 5
-
-    output_path = './data/articles_'
+    filepath = './data/'
+    prefix = 'articles_'
+    output_path = filepath + prefix
     pipeline(base_url, api_key, categories, incremental_label, key_label, query_label, articles_per_cat, output_path)
+

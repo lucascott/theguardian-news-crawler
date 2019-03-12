@@ -21,6 +21,8 @@ def get_n_pages(total_articles, articles_per_page=10):
 
 
 def pipeline(base_url, api_key, categories, incremental_label, key_label, query_label, articles_per_cat, output_path):
+    if not api_key:
+        raise Exception('Please provide a valid Guardian api key. You can get yours at https://open-platform.theguardian.com/')
     dgb = DeGuardianBoi()
     data = {}
     with tqdm(total=articles_per_cat * len(categories), desc=list(categories)[0], unit='articles') as pbar:
@@ -47,4 +49,4 @@ def pipeline(base_url, api_key, categories, incremental_label, key_label, query_
             comp_path = output_path + c + '.json'
             with open(comp_path, 'w') as fout:
                 json.dump(data[c], fout)
-                print(f"\nDumped {comp_path} successfully.")
+                print(f"\n{comp_path} dumped successfully.")

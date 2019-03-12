@@ -1,2 +1,3 @@
+#!/usr/bin/env bash
 mkdir -p data
-python test.py
+python test_crawl.py
