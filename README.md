@@ -2,4 +2,14 @@
 
 [![Build Status](https://travis-ci.org/lucascott/theguardian-news-crawler.svg?branch=master)](https://travis-ci.org/lucascott/theguardian-news-crawler)
 
-The student is required to create a method based in the space vector model to deliver small text snippets to different users depending on their profile. For instance, let us suppose that we have 4 different users: the first one being interested in politics and soccer, the second in music and films, the third in cars and politics and the fourth in soccer alone. An incoming document targeted at politics should be delivered to users 1 and 3, while a document on soccer should be delivered to users 1 and 4. Students must submit a written report no longer than 15 pages explaining the method used to encode both the documents and the user profiles, together with the algorithm used to process the queries (the more efficient, the better). The written report, which is mandatory will provide a grade of 8 (out of 10 points) maximum. To obtain the maximum grade (10 points out of 10), the student must provide a solid implementation of the proposed method in any programming language. The instructor recommends students to choose the Python programming language or Java since there are plenty of useful code snippets out there to help implement the required functionalities. If the student decides to submit the optional part, all the required stuff to execute the program must be provided.
+### Getting started
+
+If you already have crawled the data you can skip straight to the step 3.
+
+1. Simply set your The Guardian API key (if you don't have it, get one [here](https://open-platform.theguardian.com/))
+
+2. Set a new environment variable named `THEAPIGUARDIAN` with your api key as value
+
+3. Run the `start.sh` script that you find in this directory
+
+
