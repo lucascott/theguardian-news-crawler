@@ -1,11 +1,14 @@
+import gensim
 import nltk
 import spacy
 from nltk import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
+import numpy as np
 
 
 class DeCleanerBoi:
     def __init__(self):
+        self.ngrams_size = 1
         nltk.download('punkt')
         nltk.download('stopwords')
         self.stemmer = nltk.SnowballStemmer('english')
@@ -13,6 +16,7 @@ class DeCleanerBoi:
         self.nlp.remove_pipe('tagger')
         self.nlp.remove_pipe('parser')
         self.nlp.remove_pipe('ner')
+        self.ngrams = None
 
     def clean_article(self, art):
 
@@ -33,7 +37,7 @@ class DeCleanerBoi:
         :param doc:
         :return: list of lists of tokens (strings) e.g. [['hello', ''world'],['how', 'are', 'you']]
         """
-
+        doc = doc.lower()
         tokens = self.nlp(doc)
 
         new_tokens = []
@@ -43,8 +47,25 @@ class DeCleanerBoi:
             if lemma != '\n' and len(lemma) > 2 and (
                     not w.is_stop or lemma == 'not') and not w.is_punct and not w.like_num:
                 new_tokens.append(lemma)
-
         return new_tokens
+
+    def train_ngrams(self, tokens, ngrams_size=2):
+        self.ngrams_size = ngrams_size
+        # Detecting n-grams
+        for i in range(1, self.ngrams_size):  # 2 = bigrams 3 = trigrams and so on...
+            self.ngrams = gensim.models.Phrases(tokens, min_count=2, threshold=2)
+            tokens = self.ngrams[tokens]
+            print(tokens)
+        return tokens
+
+    '''
+    def test_ngrams(self, tokens):
+        if self.ngrams is None:
+            raise Exception('Ngrams not defined, run test_ngrams first.')
+        for i in range(1, self.ngrams_size):  # 2 = bigrams 3 = trigrams and so on...
+            self.ngrams.add_vocab(tokens)
+            return [self.ngrams[t] for t in tokens]
+    '''
 
 
 if __name__ == '__main__':
