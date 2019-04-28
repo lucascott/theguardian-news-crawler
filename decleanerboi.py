@@ -3,7 +3,6 @@ import nltk
 import spacy
 from nltk import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
-import numpy as np
 
 
 class DeCleanerBoi:

@@ -16,7 +16,7 @@ from tqdm import tqdm
 import utils
 from decleanerboi import DeCleanerBoi
 
-# %%
+# %% Set up all the paths
 filepath = './data/'
 prefix = 'articles_'
 docs_path = filepath + 'docs.pickle'
@@ -25,7 +25,7 @@ docs = []
 categories = {'film', 'technology', 'travel', 'food', 'business', 'fashion', 'education', 'artanddesign',
               'football', 'games'}
 
-# %%
+# %% Read the crawled json files and run the pre-processing phase
 dcb = DeCleanerBoi()
 
 for name in document_list:
@@ -37,11 +37,12 @@ for name in document_list:
             words = dcb.train_ngrams(words, ngrams_size=2)
             docs.append(TaggedDocument(words=words, tags=category))
 
+# Export the pickle of the cleaned documents
 with open(docs_path, 'wb') as fout:
     pickle.dump(docs, fout)
     print(f"{docs_path} dumped successfully.")
 
-# %%
+# %% Load the pickle of the cleaned documents
 
 with open(docs_path, 'rb') as fin:
     docs = pickle.load(fin)
@@ -49,7 +50,7 @@ with open(docs_path, 'rb') as fin:
 ds_train, ds_test = train_test_split(docs, test_size=0.25)
 
 
-# %%
+# %% Implement the Doc2Vec pipeline
 model = Doc2Vec(vector_size=100, window=300, min_count=2, workers=multiprocessing.cpu_count())
 model.build_vocab(ds_train)
 print('Training time!')
@@ -68,8 +69,7 @@ X_test, y_test = vec_for_learning(model, ds_test)
 print('Doc2Vec Model:')
 utils.test_over_models(np.array(X_train), list(y_train), np.array(X_test), list(y_test))
 
-# %%
-
+# %% Implement the Tf-Idf pipeline
 print('Tf-Idf Model:')
 tfidf = TfidfVectorizer(analyzer='word')
 X_train_tfidf = tfidf.fit_transform(*zip(*[(' '.join(d.words), d.tags) for d in ds_train]))
@@ -78,7 +78,7 @@ y_train = [d.tags for d in ds_train]
 y_test = [d.tags for d in ds_test]
 utils.test_over_models(X_train_tfidf, y_train, X_test_tfidf, y_test)
 
-# %%
+# %% Implement the Bag of words pipeline
 print('Bag of Words Model:')
 count = CountVectorizer(analyzer='word')
 X_train_count = count.fit_transform(*zip(*[(' '.join(d.words), d.tags) for d in ds_train]))
@@ -87,27 +87,9 @@ y_train = [d.tags for d in ds_train]
 y_test = [d.tags for d in ds_test]
 utils.test_over_models(X_train_count, y_train, X_test_count, y_test)
 
-# %%
+# %% Create and run the simulation of the interactions of users
 
-user_profile_size = X_train_tfidf.shape[1]
-
-user_query = X_test_tfidf[0]
-
-cosine_similarities = linear_kernel(user_query, X_train_tfidf).flatten()
-related_docs_indices = cosine_similarities.argsort()[:-6:-1]
-
-print(cosine_similarities[related_docs_indices])
-print([(ds_train[i].tags, ds_train[i].words[:10]) for i in related_docs_indices.tolist()])
-
-# %%
-
-print('Initializing users...')
-users = {}
-for c in categories:
-    users[c] = np.zeros(user_profile_size)
-print('Users initialized.')
-
-
+# functions for prediction
 def tfidf_predict(query, user, alpha):
     query_vector = tfidf.transform([query])
     query_vector = user * (alpha) + query_vector * (1 - alpha)
@@ -124,29 +106,43 @@ def q_to_res(query, user, alpha):
     return indexes
 
 
+# User Profiles initialization
+user_profile_size = X_train_tfidf.shape[1]
+print('Initializing users...')
+users = {}
+for c in categories:
+    users[c] = np.zeros(user_profile_size)
+print('Users initialized.')
+
+# Simulation
 gamma = 0.6
 alpha = 0.2
 for i in range(X_test_tfidf.shape[0] - 10):
     user_query = ' '.join(ds_test[i].words)
     category = ds_test[i].tags
     user = users[category]
+    # random component to variate the user's interests
     if random.random() > 0.8:
         cat = random.choice(list(categories))
         print(f'User: {cat.upper()}')
         user = users[cat]
     print("QUERY: ", category.upper(), user_query[:200], '\n')
-
+    # extraction of the relevant results
     indexes = q_to_res(user_query, user, alpha)
+    # best result's selection from the user
     chosen_result = random.choice(indexes)
+
+    # update of the User Profile for the selected user
     disc_res = gamma * (X_train_tfidf[chosen_result] - user)
     user = user + disc_res
     users[category] = user
+
     # print(np.mean(X_train_tfidf[chosen_result]))
     # print(np.mean(user))
     print('-' * 30)
 
-# %%
-user_doc = ds_test[-3]
+# %% Simulation for query evaluation (send the same query from different users to see differences)
+user_doc = ds_test[-3]  # change the index to try different queries
 user_query = ' '.join(user_doc.words)
 print("QUERY: ", user_doc.tags.upper(), user_query[:200], '\n')
 for c in categories:
